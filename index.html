@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildMaster Pro - Qurilish Kompaniyasi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-logo">BUILD<span>MASTER</span></div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-left">
+            <span><i class="fas fa-phone"></i> +998 71 200 00 00</span>
+            <span><i class="fas fa-envelope"></i> info@buildmaster.uz</span>
+            <span><i class="fas fa-clock"></i> Dush-Shan: 08:00 - 18:00</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+
+
+<!-- HEADER / NAV -->
+<header id="header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-icon"><i class="fas fa-hard-hat"></i></span>
+                BUILD<span>MASTER</span> <small>PRO</small>
+            </a>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Bosh sahifa</a></li>
+                <li><a href="about.html">Biz haqimizda</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Xizmatlar <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#residential"><i class="fas fa-home"></i> Uy-joy qurilishi</a></li>
+                        <li><a href="services.html#commercial"><i class="fas fa-building"></i> Tijorat qurilish</a></li>
+                        <li><a href="services.html#renovation"><i class="fas fa-tools"></i> Ta'mirlash ishlari</a></li>
+                        <li><a href="services.html#design"><i class="fas fa-drafting-compass"></i> Dizayn va loyiha</a></li>
+                        <li><a href="services.html#interior"><i class="fas fa-paint-roller"></i> Interyer bezash</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html">Loyihalar</a></li>
+                <li><a href="contact.html">Aloqa</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="contact.html" class="btn-primary">Bepul Konsultatsiya</a>
+        </div>
+        <div class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-slides">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-award"></i> 15 yillik tajriba</div>
+            <h1 class="hero-title">
+                <span class="line1">Sizning Orzuingizni</span>
+                <span class="line2 highlight">Haqiqatga Aylantiramiz</span>
+            </h1>
+            <p class="hero-desc">Biz — zamonaviy qurilish texnologiyalari va yuksak sifat standartlari asosida uy, ofis va tijorat binolarini quradigan ishonchli hamkoringiz.</p>
+            <div class="hero-btns">
+                <a href="projects.html" class="btn-primary"><i class="fas fa-eye"></i> Loyihalarimiz</a>
+                <a href="contact.html" class="btn-outline"><i class="fas fa-phone"></i> Bog'lanish</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat"><span>500+</span><small>Tugallangan loyiha</small></div>
+                <div class="hstat-divider"></div>
+                <div class="hstat"><span>15+</span><small>Yillik tajriba</small></div>
+                <div class="hstat-divider"></div>
+                <div class="hstat"><span>98%</span><small>Mijoz mamnuniyati</small></div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll"><a href="#about-quick"><i class="fas fa-chevron-down"></i></a></div>
+    <div class="hero-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+
+<!-- QUICK ABOUT -->
+<section class="quick-about" id="about-quick">
+    <div class="container">
+        <div class="qa-grid">
+            <div class="qa-left">
+                <div class="section-badge">Biz haqimizda</div>
+                <h2>Qurilishda <span>Ishonchli</span> Hamkoringiz</h2>
+                <p>BuildMaster Pro — 2009-yildan beri O'zbekistonda zamonaviy qurilish sohasida ishlab kelayotgan yetakchi kompaniya. Biz har bir loyihaga individual yondashib, mijozlarning orzu va talablarini to'liq amalga oshirishga harakat qilamiz.</p>
+                <p>Bizning mutaxassislar jamoasi — tajribali muhandislar, arxitektorlar va usta qurilishchilardan iborat bo'lib, har qanday murakkablikdagi loyihalarni yuqori sifatda va o'z vaqtida topshirishga kafolat beradi.</p>
+                <div class="qa-features">
+                    <div class="qa-feat"><i class="fas fa-check-circle"></i> Sifat kafolati</div>
+                    <div class="qa-feat"><i class="fas fa-check-circle"></i> O'z vaqtida topshirish</div>
+                    <div class="qa-feat"><i class="fas fa-check-circle"></i> Shaffof narxlar</div>
+                    <div class="qa-feat"><i class="fas fa-check-circle"></i> Tajribali jamoa</div>
+                </div>
+                <a href="about.html" class="btn-primary">Batafsil ma'lumot</a>
+            </div>
+            <div class="qa-right">
+                <div class="qa-img-main">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="Qurilish jarayoni">
+                </div>
+                <div class="qa-img-small">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300&q=80" alt="Bino">
+                </div>
+                <div class="qa-experience-badge">
+                    <span class="num">15</span>
+                    <span class="txt">Yil<br>Tajriba</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Xizmatlarimiz</div>
+            <h2>Biz Taklif Etadigan <span>Xizmatlar</span></h2>
+            <p>Qurilishning barcha bosqichlarida sifatli va ishonchli xizmat ko'rsatamiz</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="sc-icon orange"><i class="fas fa-home"></i></div>
+                <h3>Uy-joy Qurilishi</h3>
+                <p>Xususiy uylar, kvartiralar va turar-joy majmualari qurilishi. Zamonaviy me'morchilik va sifatli materiallar.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Loyihalash va dizayn</li>
+                    <li><i class="fas fa-check"></i> Asos va konstruksiya</li>
+                    <li><i class="fas fa-check"></i> Ichki va tashqi bezatish</li>
+                </ul>
+                <a href="services.html#residential" class="sc-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card featured">
+                <div class="sc-badge">Mashhur</div>
+                <div class="sc-icon white"><i class="fas fa-building"></i></div>
+                <h3>Tijorat Qurilish</h3>
+                <p>Ofis binolari, savdo markazlari, mehmonxonalar va boshqa tijorat ob'ektlari qurilishi.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Katta hajmli loyihalar</li>
+                    <li><i class="fas fa-check"></i> Zamonaviy texnologiyalar</li>
+                    <li><i class="fas fa-check"></i> Xalqaro standartlar</li>
+                </ul>
+                <a href="services.html#commercial" class="sc-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="sc-icon orange"><i class="fas fa-tools"></i></div>
+                <h3>Ta'mirlash Ishlari</h3>
+                <p>Har qanday murakkablikdagi ta'mirlash ishlari: kapital ta'mirlashdan kosmetik ta'mirlashgacha.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Kapital ta'mirlash</li>
+                    <li><i class="fas fa-check"></i> Kosmetik ta'mirlash</li>
+                    <li><i class="fas fa-check"></i> Kommunikatsiyalar</li>
+                </ul>
+                <a href="services.html#renovation" class="sc-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="sc-icon orange"><i class="fas fa-drafting-compass"></i></div>
+                <h3>Arxitektura va Dizayn</h3>
+                <p>Professional arxitektura loyihalash, 3D vizualizatsiya va interyer dizayn xizmatlari.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> 3D loyihalash</li>
+                    <li><i class="fas fa-check"></i> Interyer dizayn</li>
+                    <li><i class="fas fa-check"></i> Hujjatlashtirish</li>
+                </ul>
+                <a href="services.html#design" class="sc-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="sc-icon orange"><i class="fas fa-road"></i></div>
+                <h3>Yo'l va Infratuzilma</h3>
+                <p>Yo'l qurish, kommunikatsiya tarmoqlari, suv ta'minoti va kanalizatsiya tizimlari.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Yo'l qurish</li>
+                    <li><i class="fas fa-check"></i> Suv tarmog'i</li>
+                    <li><i class="fas fa-check"></i> Elektr ta'minoti</li>
+                </ul>
+                <a href="services.html" class="sc-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="sc-icon orange"><i class="fas fa-paint-roller"></i></div>
+                <h3>Interyer Bezash</h3>
+                <p>Zamonaviy interyer yechimlari, mebel o'rnatish, yoritish va dekorativ bezash ishlari.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Premium materiallar</li>
+                    <li><i class="fas fa-check"></i> Individual yondashuv</li>
+                    <li><i class="fas fa-check"></i> Kafolatli ish</li>
+                </ul>
+                <a href="services.html#interior" class="sc-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- STATS COUNTER -->
+<section class="stats-section">
+    <div class="stats-bg" style="background-image: url('https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?w=1600&q=80')"></div>
+    <div class="stats-overlay"></div>
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-project-diagram"></i>
+                <div class="stat-number" data-count="500">0</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">Tugallangan Loyiha</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <div class="stat-number" data-count="350">0</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">Mamnun Mijozlar</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-hard-hat"></i>
+                <div class="stat-number" data-count="120">0</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">Malakali Mutaxassis</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-trophy"></i>
+                <div class="stat-number" data-count="25">0</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">Soha Mukofoti</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FEATURED PROJECTS -->
+<section class="projects-section" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Loyihalarimiz</div>
+            <h2>So'nggi <span>Tugallangan Loyihalar</span></h2>
+            <p>Bizning eng yaxshi ishlarimizdan bir nechtasi bilan tanishing</p>
+        </div>
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">Barchasi</button>
+            <button class="filter-btn" data-filter="residential">Turar-joy</button>
+            <button class="filter-btn" data-filter="commercial">Tijorat</button>
+            <button class="filter-btn" data-filter="renovation">Ta'mirlash</button>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" data-category="commercial">
+                <div class="proj-img">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Ofis markazi">
+                    <div class="proj-overlay">
+                        <a href="projects.html" class="proj-link"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="proj-cat">Tijorat</div>
+                </div>
+                <div class="proj-info">
+                    <h3>Biznes Markazi "Toshkent Plaza"</h3>
+                    <p>22 qavatli zamonaviy ofis binosi, Toshkent shahar markazi</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 45,000 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="residential">
+                <div class="proj-img">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Turar-joy">
+                    <div class="proj-overlay">
+                        <a href="projects.html" class="proj-link"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="proj-cat">Turar-joy</div>
+                </div>
+                <div class="proj-info">
+                    <h3>Elite Residence — 200 kvartirali majmua</h3>
+                    <p>Premium sinf turar-joy majmuasi, yashil makon va dam olish joylari</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Samarqand</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 28,000 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="commercial">
+                <div class="proj-img">
+                    <img src="https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&q=80" alt="Savdo markazi">
+                    <div class="proj-overlay">
+                        <a href="projects.html" class="proj-link"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="proj-cat">Tijorat</div>
+                </div>
+                <div class="proj-info">
+                    <h3>Grand Mall Savdo Markazi</h3>
+                    <p>3 qavatli zamonaviy savdo va ko'ngilochar markaz</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Buxoro</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 32,000 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="renovation">
+                <div class="proj-img">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="Ta'mirlash">
+                    <div class="proj-overlay">
+                        <a href="projects.html" class="proj-link"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="proj-cat">Ta'mirlash</div>
+                </div>
+                <div class="proj-info">
+                    <h3>Tarixiy bino rekonstruksiyasi</h3>
+                    <p>Mustaqillik maydonidagi tarixiy mehmonxonani zamonaviylashtirish</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 12,000 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="residential">
+                <div class="proj-img">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Villa">
+                    <div class="proj-overlay">
+                        <a href="projects.html" class="proj-link"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="proj-cat">Turar-joy</div>
+                </div>
+                <div class="proj-info">
+                    <h3>Luxury Villa "Green Hills"</h3>
+                    <p>Tog' etaklaridagi premium villar kompleksi, 45 ta villa</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Chirchiq</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 18,000 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="commercial">
+                <div class="proj-img">
+                    <img src="https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=600&q=80" alt="Mehmonxona">
+                    <div class="proj-overlay">
+                        <a href="projects.html" class="proj-link"><i class="fas fa-expand"></i></a>
+                    </div>
+                    <div class="proj-cat">Tijorat</div>
+                </div>
+                <div class="proj-info">
+                    <h3>5 yulduzli "Silk Road Hotel"</h3>
+                    <p>Xalqaro standartlardagi premium mehmonxona kompleksi</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Navoiy</span>
+                        <span><i class="fas fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-ruler-combined"></i> 25,000 m²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-cta">
+            <a href="projects.html" class="btn-primary">Barcha Loyihalar <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+
+<!-- WHY US -->
+<section class="why-us">
+    <div class="container">
+        <div class="why-grid">
+            <div class="why-left">
+                <div class="section-badge">Nima uchun biz?</div>
+                <h2>BuildMaster Pro ni <span>Tanlang</span></h2>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-medal"></i></div>
+                    <div class="why-text">
+                        <h4>Sertifikatlangan Kompaniya</h4>
+                        <p>ISO 9001:2015 sifat menejmenti tizimi sertifikati va O'zbekiston qurilish me'yorlariga to'liq mos kelish.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-clock"></i></div>
+                    <div class="why-text">
+                        <h4>Muddatga Rioya</h4>
+                        <p>Barcha loyihalarimizning 97% belgilangan muddatda yoki undan oldin topshirilgan. Vaqt — pul!</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="why-text">
+                        <h4>5 Yil Kafolat</h4>
+                        <p>Barcha qurilish ishlarimizga 5 yillik kafolat beramiz. Muammo bo'lsa — bepul tuzatamiz.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="why-text">
+                        <h4>Ekologik Qurilish</h4>
+                        <p>Atrof-muhitga zarar bermaydigan, energiya tejamkor "yashil" qurilish texnologiyalarini qo'llaymiz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="why-right">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Qurilish">
+                <div class="why-video-btn">
+                    <a href="#" class="play-btn"><i class="fas fa-play"></i></a>
+                    <span>Bizning ish<br>jarayonini ko'ring</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section class="process-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Ish jarayoni</div>
+            <h2>Qurilish <span>Bosqichlari</span></h2>
+            <p>Biz bilan ishlash qanchalik oson ekanligini bilib oling</p>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fas fa-comments"></i></div>
+                <h3>Konsultatsiya</h3>
+                <p>Mutaxassislarimiz bilan bepul uchrashuv. Talablaringizni muhokama qilamiz.</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fas fa-drafting-compass"></i></div>
+                <h3>Loyihalash</h3>
+                <p>3D vizualizatsiya bilan arxitektura loyihasini tayyorlaymiz.</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Shartnoma</h3>
+                <p>Narx, muddatlar va kafolatlar ko'rsatilgan shartnoma imzolash.</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <div class="step">
+                <div class="step-num">04</div>
+                <div class="step-icon"><i class="fas fa-hard-hat"></i></div>
+                <h3>Qurilish</h3>
+                <p>Professional jamoa bilan qurilish ishlarini boshlash va nazorat qilish.</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+            <div class="step">
+                <div class="step-num">05</div>
+                <div class="step-icon"><i class="fas fa-key"></i></div>
+                <h3>Topshirish</h3>
+                <p>Tayyor ob'ektni topshirish, hujjatlar va kafolat berish.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Jamoamiz</div>
+            <h2>Bizning <span>Mutaxassislar</span></h2>
+            <p>Tajribali va malakali mutaxassislar jamoasi</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Direktor">
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Alisher Karimov</h3>
+                    <span>Bosh Direktor & Asoschisi</span>
+                    <p>15 yillik qurilish sohasidagi tajriba. 200+ loyihani muvaffaqiyatli boshqargan.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt="Muhandis">
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Bobur Toshmatov</h3>
+                    <span>Bosh Muhandis</span>
+                    <p>Konstruktiv muhandislik bo'yicha 12 yillik tajriba. Murakkab konstruksiyalar mutaxassisi.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Arxitektor">
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Nilufar Yusupova</h3>
+                    <span>Bosh Arxitektor</span>
+                    <p>Zamonaviy arxitektura va dizayn bo'yicha xalqaro diplomli mutaxassis.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Loyiha menejeri">
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Sanjar Rahimov</h3>
+                    <span>Loyiha Menejeri</span>
+                    <p>PMP sertifikatlangan loyiha menejmenti bo'yicha 8 yillik tajriba.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Fikrlar</div>
+            <h2>Mijozlarimiz <span>Nima Deydi?</span></h2>
+        </div>
+        <div class="testimonials-slider" id="testimonialSlider">
+            <div class="testimonial-track">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"BuildMaster Pro bilan ishlash ajoyib tajriba bo'ldi. Ular ofis binamizni belgilangan muddatda va kutganimizdan ham yaxshiroq topshirdi. Professional jamoa, sifatli ish!"</p>
+                    <div class="t-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&q=80" alt="">
+                        <div>
+                            <strong>Ulugbek Mirzayev</strong>
+                            <span>TechGroup LLC, Direktor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Uy qurishda bir nechta kompaniya bilan muzokaralar olib bordik. BuildMaster Pro narxi adolatli, ishi sifatli va jamoasi odamgarchiligi baland. Tavsiya qilaman!"</p>
+                    <div class="t-author">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&q=80" alt="">
+                        <div>
+                            <strong>Malika Hasanova</strong>
+                            <span>Xususiy mijoz, Toshkent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <p>"Savdo markazimizni qurishda BuildMaster Pro bilan hamkorlik qildik. Ularning professional yondashuvi va zamonaviy texnologiyalari bizni hayratda qoldirdi."</p>
+                    <div class="t-author">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=80&q=80" alt="">
+                        <div>
+                            <strong>Jamshid Xolmatov</strong>
+                            <span>Nexus Group, Asoschisi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="test-controls">
+            <button class="test-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="test-dots">
+                <span class="tdot active"></span>
+                <span class="tdot"></span>
+                <span class="tdot"></span>
+            </div>
+            <button class="test-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+
+<!-- PARTNERS -->
+<section class="partners-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Hamkorlar</div>
+            <h2>Bizning <span>Ishonchli Hamkorlar</span></h2>
+        </div>
+        <div class="partners-grid">
+            <div class="partner-logo"><i class="fas fa-industry"></i><span>SteelCorp UZ</span></div>
+            <div class="partner-logo"><i class="fas fa-cube"></i><span>CementPro</span></div>
+            <div class="partner-logo"><i class="fas fa-wrench"></i><span>TechBuild</span></div>
+            <div class="partner-logo"><i class="fas fa-gem"></i><span>EliteStone</span></div>
+            <div class="partner-logo"><i class="fas fa-bolt"></i><span>PowerSystems</span></div>
+            <div class="partner-logo"><i class="fas fa-tint"></i><span>AquaPlumb</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG / NEWS -->
+<section class="blog-section" id="blog">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Yangiliklar</div>
+            <h2>Oxirgi <span>Maqolalar</span></h2>
+            <p>Qurilish sohasidagi eng yangi yangiliklar va foydali maslahatlar</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card featured-blog">
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=700&q=80" alt="Blog">
+                    <div class="blog-cat">Qurilish</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="fas fa-calendar"></i> 15 Iyun, 2025</div>
+                    <h3>2025-yilda zamonaviy qurilish texnologiyalari: nimalarga e'tibor berish kerak?</h3>
+                    <p>Qurilish sanoatida sun'iy intellekt, robotika va ekologik materiallarning roli tobora oshib bormoqda. Bu maqolada eng so'nggi tendensiyalar haqida gaplashamiz...</p>
+                    <a href="#" class="blog-link">O'qish <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Blog">
+                    <div class="blog-cat">Maslahat</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="fas fa-calendar"></i> 8 Iyun, 2025</div>
+                    <h3>Uy qurish uchun yer tanlashda nimalarga e'tibor berish kerak?</h3>
+                    <p>Mutaxassislarimizning amaliy maslahatlari bilan to'g'ri qaror qabul qiling...</p>
+                    <a href="#" class="blog-link">O'qish <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=400&q=80" alt="Blog">
+                    <div class="blog-cat">Interyer</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="fas fa-calendar"></i> 1 Iyun, 2025</div>
+                    <h3>Minimal dizayn: kamroq narsada ko'proq go'zallik</h3>
+                    <p>Zamonaviy interyer dizaynida minimalizm uslubi qanday qo'llaniladi...</p>
+                    <a href="#" class="blog-link">O'qish <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?w=1600&q=80')"></div>
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <div class="cta-content">
+            <h2>Loyihangizni Boshlashga Tayyormisiz?</h2>
+            <p>Bugun biz bilan bog'laning va bepul konsultatsiya oling. Orzuingizni birgalikda amalga oshiramiz!</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn-primary"><i class="fas fa-phone"></i> Hozir Qo'ng'iroq Qiling</a>
+                <a href="projects.html" class="btn-outline-white"><i class="fas fa-eye"></i> Loyihalar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT QUICK -->
+<section class="contact-quick" id="contact">
+    <div class="container">
+        <div class="cq-grid">
+            <div class="cq-info">
+                <div class="section-badge">Aloqa</div>
+                <h2>Biz Bilan <span>Bog'laning</span></h2>
+                <p>Savol yoki takliflaringiz bo'lsa, bizga yozing. Mutaxassislarimiz 24 soat ichida javob beradi.</p>
+                <div class="cq-contacts">
+                    <div class="cq-item">
+                        <div class="cq-icon"><i class="fas fa-phone"></i></div>
+                        <div><strong>Telefon</strong><br><a href="tel:+998712000000">+998 71 200 00 00</a><br><a href="tel:+998712000001">+998 71 200 00 01</a></div>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-icon"><i class="fas fa-envelope"></i></div>
+                        <div><strong>Email</strong><br><a href="mailto:info@buildmaster.uz">info@buildmaster.uz</a></div>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><strong>Manzil</strong><br>Toshkent sh., Mirzo Ulug'bek t.,<br>Mustaqillik ko'ch. 55</div>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-icon"><i class="fas fa-clock"></i></div>
+                        <div><strong>Ish vaqti</strong><br>Dushanba – Shanba: 8:00–18:00<br>Yakshanba: Dam olish kuni</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cq-form">
+                <form id="contactForm">
+                    <h3>Xabar Yuborish</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ism *</label>
+                            <input type="text" placeholder="Ismingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon *</label>
+                            <input type="tel" placeholder="+998 XX XXX XX XX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Xizmat turi</label>
+                        <select>
+                            <option value="">Tanlang...</option>
+                            <option>Uy-joy qurilishi</option>
+                            <option>Tijorat qurilish</option>
+                            <option>Ta'mirlash ishlari</option>
+                            <option>Arxitektura loyiha</option>
+                            <option>Interyer dizayn</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Xabar *</label>
+                        <textarea rows="4" placeholder="Loyihangiz haqida qisqacha ma'lumot bering..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Xabar Yuborish</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- MAP -->
+<div class="map-section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191970.4348616508!2d69.0946703!3d41.2994958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">BUILD<span>MASTER</span> <small>PRO</small></div>
+                    <p>O'zbekistondagi yetakchi qurilish kompaniyasi. 2009-yildan beri sifatli qurilish xizmatlarini taqdim etib kelmoqdamiz.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Tezkor Havolalar</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Xizmatlar</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Loyihalar</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Aloqa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Xizmatlar</h4>
+                    <ul>
+                        <li><a href="services.html#residential"><i class="fas fa-chevron-right"></i> Uy-joy qurilishi</a></li>
+                        <li><a href="services.html#commercial"><i class="fas fa-chevron-right"></i> Tijorat qurilish</a></li>
+                        <li><a href="services.html#renovation"><i class="fas fa-chevron-right"></i> Ta'mirlash</a></li>
+                        <li><a href="services.html#design"><i class="fas fa-chevron-right"></i> Arxitektura</a></li>
+                        <li><a href="services.html#interior"><i class="fas fa-chevron-right"></i> Interyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Aloqa</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Toshkent, Mirzo Ulug'bek tumani, Mustaqillik ko'ch. 55</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+998712000000">+998 71 200 00 00</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@buildmaster.uz">info@buildmaster.uz</a></p>
+                        <p><i class="fas fa-clock"></i> Dush-Shan: 08:00–18:00</p>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h5>Yangiliklar olish</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Email manzilingiz">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 BuildMaster Pro. Barcha huquqlar himoyalangan.</p>
+            <p>Yaratuvchi: <a href="#">Web Studio</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+    <a href="tel:+998712000000" class="float-btn phone-btn"><i class="fas fa-phone"></i></a>
+    <a href="#" class="float-btn telegram-btn"><i class="fab fa-telegram-plane"></i></a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

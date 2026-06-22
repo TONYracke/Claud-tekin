@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyihalar — BuildMaster Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-logo">BUILD<span>MASTER</span></div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-left">
+            <span><i class="fas fa-phone"></i> +998 71 200 00 00</span>
+            <span><i class="fas fa-envelope"></i> info@buildmaster.uz</span>
+            <span><i class="fas fa-clock"></i> Dush-Shan: 08:00 - 18:00</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-icon"><i class="fas fa-hard-hat"></i></span>
+                BUILD<span>MASTER</span> <small>PRO</small>
+            </a>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="about.html">Biz haqimizda</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Xizmatlar <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#residential"><i class="fas fa-home"></i> Uy-joy qurilishi</a></li>
+                        <li><a href="services.html#commercial"><i class="fas fa-building"></i> Tijorat qurilish</a></li>
+                        <li><a href="services.html#renovation"><i class="fas fa-tools"></i> Ta'mirlash ishlari</a></li>
+                        <li><a href="services.html#design"><i class="fas fa-drafting-compass"></i> Dizayn va loyiha</a></li>
+                        <li><a href="services.html#interior"><i class="fas fa-paint-roller"></i> Interyer bezash</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="active">Loyihalar</a></li>
+                <li><a href="contact.html">Aloqa</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="contact.html" class="btn-primary">Bepul Konsultatsiya</a>
+        </div>
+        <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="section-badge">Portfolio</div>
+        <h1>Bizning Loyihalar</h1>
+        <p>500+ muvaffaqiyatli amalga oshirilgan loyihalardan tanlanma namunalar</p>
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Bosh sahifa</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Loyihalar</span>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS FILTER & GRID -->
+<section class="section projects-page">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-badge">Portfolio</div>
+            <h2>Barcha <span>Loyihalar</span></h2>
+            <p>Har bir loyihamiz sifat, innovatsiya va mijoz qoniqishi asosida qurilgan</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">Barchasi</button>
+            <button class="filter-btn" data-filter="residential">Uy-joy</button>
+            <button class="filter-btn" data-filter="commercial">Tijorat</button>
+            <button class="filter-btn" data-filter="renovation">Ta'mirlash</button>
+            <button class="filter-btn" data-filter="interior">Interyer</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-page-grid">
+
+            <div class="project-page-card" data-category="residential">
+                <div class="pp-img">
+                    <img src="Claud-tekin/1.png" alt="Zamonaviy Turar-joy Majmuasi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/1RASM.png" class="proj-link" data-lightbox="Claud-tekin/1RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Uy-joy</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Zamonaviy Turar-joy Majmuasi</h3>
+                    <p>Toshkent shahri, Yunusobod tumani. 12 qavatli zamonaviy turar-joy binosi. 240 xonadon.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 18,500 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="commercial">
+                <div class="pp-img">
+                    <img src="Claud-tekin/2.png" alt="Biznes Markaz Tower">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/2RASM.png" class="proj-link" data-lightbox="Claud-tekin/2RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Tijorat</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Biznes Markaz Tower</h3>
+                    <p>Toshkent markazida 22 qavatli zamonaviy ofis binosi. Premium sinf A+ ofis maydoni.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-ruler-combined"></i> 32,000 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="residential">
+                <div class="pp-img">
+                    <img src="Claud-tekin/3.png" alt="Elite Villa Kompleksi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/3RASM.png" class="proj-link" data-lightbox="Claud-tekin/3RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Uy-joy</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Elite Villa Kompleksi</h3>
+                    <p>Samarqand shahrida eksklyuziv villa majmuasi. 24 ta premium villa, yashil hudud va hovuz.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Samarqand</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 8,200 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="commercial">
+                <div class="pp-img">
+                    <img src="Claud-tekin/4.png" alt="Savdo Markazi Grand Mall">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/4RASM.png" class="proj-link" data-lightbox="Claud-tekin/4RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Tijorat</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Savdo Markazi Grand Mall</h3>
+                    <p>4 qavatli zamonaviy savdo markazi. 180 ta do'kon, 8 ta restoran, kino va o'yin maydoni.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Buxoro</span>
+                        <span><i class="fas fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-ruler-combined"></i> 45,000 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="renovation">
+                <div class="pp-img">
+                    <img src="Claud-tekin/5.png" alt="Tarixiy Bino Rekonstruktsiyasi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/5RASM.png" class="proj-link" data-lightbox="Claud-tekin/5RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Ta'mirlash</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Tarixiy Bino Rekonstruktsiyasi</h3>
+                    <p>XIX asrdan qolgan tarixiy binoning to'liq rekonstruktsiyasi. UNESCO standartlariga mos.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Samarqand</span>
+                        <span><i class="fas fa-calendar"></i> 2021</span>
+                        <span><i class="fas fa-ruler-combined"></i> 3,800 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="interior">
+                <div class="pp-img">
+                    <img src="Claud-tekin/6.png" alt="Premium Penthouse Interyer">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/6RASM.png" class="proj-link" data-lightbox="Claud-tekin/6RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Interyer</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Premium Penthouse Interyer</h3>
+                    <p>Toshkent shahrida 450 m² penthouse uchun zamonaviy minimalist interyer dizayni.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 450 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="commercial">
+                <div class="pp-img">
+                    <img src="Claud-tekin/7.png" alt="Mehmonxona Majmuasi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/7RASM.png" class="proj-link" data-lightbox="Claud-tekin/7RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Tijorat</span>
+                </div>
+                <div class="proj-info">
+                    <h3>5 Yulduzli Mehmonxona</h3>
+                    <p>Navoiy shahrida 180 xonali 5 yulduzli mehmonxona. Spa, konferens-zal va restoran bilan.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Navoiy</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 22,000 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="residential">
+                <div class="pp-img">
+                    <img src="Claud-tekin/8.png" alt="Green Park Kvartallari">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/8RASM.png" class="proj-link" data-lightbox="Claud-tekin/8RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Uy-joy</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Green Park Kvartallari</h3>
+                    <p>Yashil texnologiyalar asosida qurilgan eko-mahalla. Quyosh panellari va aqlli boshqaruv tizimi.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 28,500 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="renovation">
+                <div class="pp-img">
+                    <img src="Claud-tekin/9.png" alt="Ofis Rekonstruktsiyasi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/9RASM.png" class="proj-link" data-lightbox="Claud-tekin/9RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Ta'mirlash</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Korporativ Ofis Rekonstruktsiyasi</h3>
+                    <p>Yirik korporatsiya uchun 5 qavatli ofis binosi to'liq rekonstruktsiyasi va modernizatsiyasi.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-ruler-combined"></i> 6,400 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="interior">
+                <div class="pp-img">
+                    <img src="Claud-tekin/10.png" alt="Restoran Interyer">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/10RASM.png" class="proj-link" data-lightbox="Claud-tekin/10RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Interyer</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Luxury Restoran Interyer</h3>
+                    <p>300 o'rindiqli premium restoran uchun an'anaviy o'zbek va zamonaviy uslublarni uyg'unlashtirgan dizayn.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 1,200 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="commercial">
+                <div class="pp-img">
+                    <img src="Claud-tekin/11.png" alt="Sanoat Majmuasi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/11RASM.png" class="proj-link" data-lightbox="Claud-tekin/11RASM.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Tijorat</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Sanoat Ishlab Chiqarish Majmuasi</h3>
+                    <p>Zamonaviy ishlab chiqarish zavodi va logistika markazi. Avtomatlashtirilgan omborxona tizimi.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Angren</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-ruler-combined"></i> 55,000 m²</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-page-card" data-category="residential">
+                <div class="pp-img">
+                    <img src="Claud-tekin/12.png" alt="Smart Home Kompleksi">
+                    <div class="proj-overlay">
+                        <a href="Claud-tekin/12.png" class="proj-link" data-lightbox="Claud-tekin/12.png">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                    <span class="proj-cat">Uy-joy</span>
+                </div>
+                <div class="proj-info">
+                    <h3>Smart Home Turar-joy Kompleksi</h3>
+                    <p>Aqlli uy texnologiyalari bilan jihozlangan zamonaviy 8 qavatli turar-joy binosi. 160 xonadon.</p>
+                    <div class="proj-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Toshkent</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 14,200 m²</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+    <div class="stats-bg" style="background-image:url('Claud-tekin/8.png')"></div>
+    <div class="stats-overlay"></div>
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <i class="fas fa-building"></i>
+                <div><span class="stat-number" data-count="500">0</span><span class="stat-plus">+</span></div>
+                <div class="stat-label">Tugallangan Loyiha</div>
+            </div>
+            <div class="stat-item reveal">
+                <i class="fas fa-users"></i>
+                <div><span class="stat-number" data-count="1200">0</span><span class="stat-plus">+</span></div>
+                <div class="stat-label">Mamnun Mijozlar</div>
+            </div>
+            <div class="stat-item reveal">
+                <i class="fas fa-hard-hat"></i>
+                <div><span class="stat-number" data-count="180">0</span><span class="stat-plus">+</span></div>
+                <div class="stat-label">Malakali Xodim</div>
+            </div>
+            <div class="stat-item reveal">
+                <i class="fas fa-award"></i>
+                <div><span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span></div>
+                <div class="stat-label">Yillik Tajriba</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <div class="cta-bg" style="background-image:url('Claud-tekin/7.png')"></div>
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <div class="cta-content reveal">
+            <h2>Keyingi Loyiha Sizniki Bo'lsin!</h2>
+            <p>Orzuingizdagi binoni qurish uchun bugun murojaat qiling. Bepul maslahat va narx taklifi</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn-primary"><i class="fas fa-phone"></i> Bepul Konsultatsiya</a>
+                <a href="about.html" class="btn-outline-white"><i class="fas fa-info-circle"></i> Biz Haqimizda</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">BUILD<span>MASTER</span> <small>PRO</small></div>
+                    <p>O'zbekistondagi yetakchi qurilish kompaniyasi. 2009-yildan beri sifatli qurilish xizmatlarini taqdim etib kelmoqdamiz.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Tezkor Havolalar</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Xizmatlar</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Loyihalar</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Aloqa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Xizmatlar</h4>
+                    <ul>
+                        <li><a href="services.html#residential"><i class="fas fa-chevron-right"></i> Uy-joy qurilishi</a></li>
+                        <li><a href="services.html#commercial"><i class="fas fa-chevron-right"></i> Tijorat qurilish</a></li>
+                        <li><a href="services.html#renovation"><i class="fas fa-chevron-right"></i> Ta'mirlash</a></li>
+                        <li><a href="services.html#design"><i class="fas fa-chevron-right"></i> Arxitektura</a></li>
+                        <li><a href="services.html#interior"><i class="fas fa-chevron-right"></i> Interyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Aloqa</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Toshkent, Mirzo Ulug'bek tumani, Mustaqillik ko'ch. 55</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+998712000000">+998 71 200 00 00</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@buildmaster.uz">info@buildmaster.uz</a></p>
+                        <p><i class="fas fa-clock"></i> Dush-Shan: 08:00–18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 BuildMaster Pro. Barcha huquqlar himoyalangan.</p>
+            <p>Yaratuvchi: <a href="#">Web Studio</a></p>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+<div class="floating-cta">
+    <a href="tel:+998712000000" class="float-btn phone-btn"><i class="fas fa-phone"></i></a>
+    <a href="#" class="float-btn telegram-btn"><i class="fab fa-telegram-plane"></i></a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
