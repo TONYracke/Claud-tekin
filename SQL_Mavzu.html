@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>SQL: DDL, DML, JOIN va boshqalar</title>
+<style>
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14pt;
+    margin: 2.5cm 3cm 2.5cm 3cm;
+    line-height: 1.6;
+    color: #000;
+  }
+  h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 15pt;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+  h3 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 4px;
+  }
+  p { margin: 6px 0 10px 0; text-align: justify; }
+  pre {
+    background: #f4f4f4;
+    border-left: 4px solid #555;
+    padding: 8px 14px;
+    font-family: "Courier New", monospace;
+    font-size: 12pt;
+    margin: 8px 0 14px 0;
+    white-space: pre-wrap;
+  }
+  ul, ol { margin: 6px 0 10px 20px; }
+  li { margin-bottom: 4px; }
+  .page-break { page-break-before: always; }
+  hr { border: none; border-top: 1px solid #999; margin: 18px 0; }
+  .center { text-align: center; }
+  .bold { font-weight: bold; }
+</style>
+</head>
+<body>
+
+
+<h1>SQL: DDL, DML, JOIN, Agregatsiya, Subquery va EXPLAIN</h1>
+<p class="center"><em>Times New Roman, 14pt &mdash; 10 sahifali qo'llanma</em></p>
+<hr>
+
+<!-- ===================== SAHIFA 1 ===================== -->
+<h2>1-sahifa. SQL nima? DDL va DML tushunchasi</h2>
+<p>
+  <span class="bold">SQL (Structured Query Language)</span> &mdash; relyatsion ma'lumotlar bazalari bilan ishlash uchun
+  mo'ljallangan tizim tili. SQL ikki asosiy bo'limga bo'linadi:
+</p>
+<ul>
+  <li><span class="bold">DDL (Data Definition Language)</span> &mdash; ma'lumotlar tuzilmasini aniqlash tili.
+    Jadval, indeks, ko'rinish (view) va sxemalarni yaratish, o'zgartirish yoki o'chirish uchun ishlatiladi.</li>
+  <li><span class="bold">DML (Data Manipulation Language)</span> &mdash; ma'lumotlarni boshqarish tili.
+    Jadvaldagi qatorlarni kiritish, yangilash, o'chirish va tanlash uchun ishlatiladi.</li>
+</ul>
+<p>
+  DDL operatorlari bajarilganda avtomatik ravishda <em>COMMIT</em> sodir bo'ladi (aksariyat MBBT'larda).
+  DML operatorlari esa tranzaksiyalar doirasida ishlaydi &mdash; ya'ni <code>COMMIT</code> yoki
+  <code>ROLLBACK</code> bilan boshqariladi.
+</p>
+<hr>
+
+<!-- ===================== SAHIFA 2 ===================== -->
+<h2>2-sahifa. DDL: CREATE operatori</h2>
+<p>
+  <span class="bold">CREATE</span> &mdash; yangi ob'ekt (jadval, ma'lumotlar bazasi, indeks, view) yaratadi.
+</p>
+<h3>Ma'lumotlar bazasi yaratish:</h3>
+<pre>CREATE DATABASE kompaniya
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;</pre>
+
+<h3>Jadval yaratish:</h3>
+<pre>CREATE TABLE xodimlar (
+  id         INT           NOT NULL AUTO_INCREMENT,
+  ism        VARCHAR(100)  NOT NULL,
+  familiya   VARCHAR(100)  NOT NULL,
+  email      VARCHAR(150)  UNIQUE NOT NULL,
+  lavozim    VARCHAR(80),
+  maosh      DECIMAL(12,2) DEFAULT 0.00,
+  tug_sana   DATE,
+  bo_lim_id  INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (bo_lim_id) REFERENCES bo_limlar(id)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
+);</pre>
+<p>
+  Bu misolda: <code>NOT NULL</code>, <code>UNIQUE</code>, <code>DEFAULT</code>,
+  <code>PRIMARY KEY</code>, <code>FOREIGN KEY</code> cheklovlari ishlatilgan.
+</p>
+<hr>
+
+
+<!-- ===================== SAHIFA 3 ===================== -->
+<h2>3-sahifa. DDL: ALTER va DROP operatorlari</h2>
+
+<h3>ALTER &mdash; jadval tuzilmasini o'zgartirish</h3>
+<p>Mavjud jadvalga ustun qo'shish, o'chirish yoki o'zgartirish mumkin:</p>
+<pre>-- Ustun qo'shish
+ALTER TABLE xodimlar
+  ADD COLUMN telefon VARCHAR(20) AFTER email;
+
+-- Ustun turini o'zgartirish
+ALTER TABLE xodimlar
+  MODIFY COLUMN maosh DECIMAL(15,2) NOT NULL DEFAULT 0.00;
+
+-- Ustunni qayta nomlash
+ALTER TABLE xodimlar
+  RENAME COLUMN tug_sana TO tugilgan_sana;
+
+-- Ustunni o'chirish
+ALTER TABLE xodimlar
+  DROP COLUMN telefon;
+
+-- Cheklov qo'shish
+ALTER TABLE xodimlar
+  ADD CONSTRAINT chk_maosh CHECK (maosh >= 0);</pre>
+
+<h3>DROP &mdash; ob'ektni butunlay o'chirish</h3>
+<pre>-- Jadvalni o'chirish (barcha ma'lumotlar bilan)
+DROP TABLE IF EXISTS vaqtli_jadval;
+
+-- Ma'lumotlar bazasini o'chirish
+DROP DATABASE IF EXISTS test_db;
+
+-- Ko'rinishni o'chirish
+DROP VIEW IF EXISTS faol_xodimlar;
+
+-- Indeksni o'chirish
+DROP INDEX idx_email ON xodimlar;</pre>
+<p>
+  <span class="bold">TRUNCATE TABLE</span> ham DDL'ga kiradi: u jadvaldagi barcha qatorlarni
+  tezda o'chiradi, lekin tuzilmani saqlab qoladi.
+</p>
+<pre>TRUNCATE TABLE jurnal;</pre>
+<hr>
+
+
+<!-- ===================== SAHIFA 4 ===================== -->
+<h2>4-sahifa. DDL: Tiplar va Cheklovlar</h2>
+
+<h3>Asosiy ma'lumot turlari (MySQL/PostgreSQL):</h3>
+<ul>
+  <li><span class="bold">Butun sonlar:</span> <code>TINYINT</code>, <code>SMALLINT</code>, <code>INT</code>, <code>BIGINT</code></li>
+  <li><span class="bold">Kasr sonlar:</span> <code>DECIMAL(p,s)</code>, <code>FLOAT</code>, <code>DOUBLE</code></li>
+  <li><span class="bold">Matn:</span> <code>CHAR(n)</code>, <code>VARCHAR(n)</code>, <code>TEXT</code>, <code>LONGTEXT</code></li>
+  <li><span class="bold">Sana/Vaqt:</span> <code>DATE</code>, <code>TIME</code>, <code>DATETIME</code>, <code>TIMESTAMP</code></li>
+  <li><span class="bold">Mantiqiy:</span> <code>BOOLEAN</code> / <code>TINYINT(1)</code></li>
+  <li><span class="bold">Ikkilik:</span> <code>BLOB</code>, <code>BYTEA</code> (PostgreSQL)</li>
+  <li><span class="bold">JSON:</span> <code>JSON</code> (MySQL 5.7+, PostgreSQL 9.2+)</li>
+</ul>
+
+<h3>Cheklovlar (Constraints):</h3>
+<ul>
+  <li><span class="bold">NOT NULL</span> &mdash; ustun bo'sh bo'lishi mumkin emas</li>
+  <li><span class="bold">UNIQUE</span> &mdash; har bir qiymat takrorlanmasin</li>
+  <li><span class="bold">PRIMARY KEY</span> &mdash; NOT NULL + UNIQUE (asosiy kalit)</li>
+  <li><span class="bold">FOREIGN KEY</span> &mdash; boshqa jadvaldagi asosiy kalitga havola</li>
+  <li><span class="bold">CHECK</span> &mdash; qiymat shartni qanoatlantirishini tekshiradi</li>
+  <li><span class="bold">DEFAULT</span> &mdash; qiymat kiritilmasa standart qiymat ishlatiladi</li>
+  <li><span class="bold">AUTO_INCREMENT / SERIAL</span> &mdash; avtomatik raqamlab berish</li>
+</ul>
+
+<pre>CREATE TABLE buyurtmalar (
+  id          BIGINT        PRIMARY KEY AUTO_INCREMENT,
+  mijoz_id    INT           NOT NULL,
+  summa       DECIMAL(14,2) NOT NULL CHECK (summa > 0),
+  holat       VARCHAR(20)   NOT NULL DEFAULT 'kutilmoqda',
+  yaratilgan  TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (mijoz_id) REFERENCES mijozlar(id)
+);</pre>
+<hr>
+
+
+<!-- ===================== SAHIFA 5 ===================== -->
+<h2>5-sahifa. DML: INSERT, UPDATE, DELETE</h2>
+
+<h3>INSERT &mdash; qator qo'shish</h3>
+<pre>-- Yagona qator
+INSERT INTO xodimlar (ism, familiya, email, maosh, bo_lim_id)
+VALUES ('Sardor', 'Rahimov', 'sardor@mail.uz', 5500000, 2);
+
+-- Bir nechta qator bir vaqtda
+INSERT INTO xodimlar (ism, familiya, email, maosh, bo_lim_id) VALUES
+  ('Malika', 'Yusupova', 'malika@mail.uz', 6200000, 1),
+  ('Jasur',  'Toshmatov', 'jasur@mail.uz', 4800000, 3);
+
+-- Boshqa jadvaldan ko'chirib qo'shish
+INSERT INTO arxiv_xodimlar
+SELECT * FROM xodimlar WHERE maosh < 3000000;</pre>
+
+<h3>UPDATE &mdash; qatorlarni yangilash</h3>
+<pre>-- Bitta xodim maoshini oshirish
+UPDATE xodimlar
+SET maosh = maosh * 1.15
+WHERE id = 7;
+
+-- Bir nechta ustunni bir vaqtda yangilash
+UPDATE xodimlar
+SET lavozim = 'Senior Developer',
+    maosh   = 9000000
+WHERE email = 'sardor@mail.uz';
+
+-- Shartli ommaviy yangilash
+UPDATE xodimlar
+SET maosh = maosh + 500000
+WHERE bo_lim_id = 2 AND maosh < 7000000;</pre>
+
+<h3>DELETE &mdash; qatorlarni o'chirish</h3>
+<pre>-- Bitta qatorni o'chirish
+DELETE FROM xodimlar WHERE id = 12;
+
+-- Shartga mos barcha qatorlarni o'chirish
+DELETE FROM jurnal
+WHERE yaratilgan < DATE_SUB(NOW(), INTERVAL 1 YEAR);</pre>
+<hr>
+
+
+<!-- ===================== SAHIFA 6 ===================== -->
+<h2>6-sahifa. JOIN turlari</h2>
+<p>
+  <span class="bold">JOIN</span> &mdash; ikki yoki undan ortiq jadvaldan ma'lumotlarni birlashtiradi.
+  Asosiy turlari:
+</p>
+<ul>
+  <li><span class="bold">INNER JOIN</span> &mdash; faqat ikki jadvalda ham mos keladigan qatorlar</li>
+  <li><span class="bold">LEFT JOIN</span> &mdash; chap jadvalning barcha qatorlari + o'ng jadvaldan mos kelganlar</li>
+  <li><span class="bold">RIGHT JOIN</span> &mdash; o'ng jadvalning barcha qatorlari + chap jadvaldan mos kelganlar</li>
+  <li><span class="bold">FULL OUTER JOIN</span> &mdash; ikkala jadvalning barcha qatorlari</li>
+  <li><span class="bold">CROSS JOIN</span> &mdash; dekart ko'paytma (har bir qatorni har bir qatorga)</li>
+  <li><span class="bold">SELF JOIN</span> &mdash; jadvalning o'zi bilan birlashishi</li>
+</ul>
+
+<pre>-- INNER JOIN: xodim va bo'lim nomi birga
+SELECT x.ism, x.familiya, b.nomi AS bolim
+FROM xodimlar x
+INNER JOIN bo_limlar b ON x.bo_lim_id = b.id;
+
+-- LEFT JOIN: bo'limi bo'lmagan xodimlar ham ko'rinsin
+SELECT x.ism, b.nomi AS bolim
+FROM xodimlar x
+LEFT JOIN bo_limlar b ON x.bo_lim_id = b.id;
+
+-- FULL OUTER JOIN (PostgreSQL):
+SELECT x.ism, b.nomi
+FROM xodimlar x
+FULL OUTER JOIN bo_limlar b ON x.bo_lim_id = b.id;
+
+-- SELF JOIN: xodim va uning menejerini ko'rsatish
+SELECT x.ism AS xodim, m.ism AS menejer
+FROM xodimlar x
+LEFT JOIN xodimlar m ON x.menejer_id = m.id;
+
+-- Ko'p jadval bilan JOIN
+SELECT x.ism, b.nomi AS bolim, l.nomi AS loyiha
+FROM xodimlar x
+JOIN bo_limlar b ON x.bo_lim_id = b.id
+JOIN loyiha_xodim lx ON lx.xodim_id = x.id
+JOIN loyihalar l ON l.id = lx.loyiha_id;</pre>
+<hr>
+
+
+<!-- ===================== SAHIFA 7 ===================== -->
+<h2>7-sahifa. Guruhlash va Agregatsiya</h2>
+<p>
+  <span class="bold">GROUP BY</span> &mdash; qatorlarni belgilangan ustun(lar) bo'yicha guruhlaydi.
+  <span class="bold">Agregat funksiyalar</span> har bir guruh uchun yagona natija qaytaradi.
+</p>
+
+<h3>Asosiy agregat funksiyalar:</h3>
+<ul>
+  <li><code>COUNT(*)</code> &mdash; qatorlar soni</li>
+  <li><code>SUM(ustun)</code> &mdash; yig'indisi</li>
+  <li><code>AVG(ustun)</code> &mdash; o'rtacha qiymati</li>
+  <li><code>MIN(ustun)</code> / <code>MAX(ustun)</code> &mdash; minimum / maksimum</li>
+  <li><code>GROUP_CONCAT(ustun)</code> &mdash; guruh qiymatlarini birlashtirish (MySQL)</li>
+  <li><code>STRING_AGG(ustun, ajratuvchi)</code> &mdash; PostgreSQL analogi</li>
+</ul>
+
+<pre>-- Har bir bo'limdagi xodimlar soni va o'rtacha maosh
+SELECT
+  b.nomi        AS bolim,
+  COUNT(x.id)   AS xodimlar_soni,
+  AVG(x.maosh)  AS ortacha_maosh,
+  MAX(x.maosh)  AS max_maosh,
+  MIN(x.maosh)  AS min_maosh
+FROM xodimlar x
+JOIN bo_limlar b ON x.bo_lim_id = b.id
+GROUP BY b.id, b.nomi;
+
+-- HAVING: guruhga shart qo'yish (WHERE o'rniga)
+SELECT bo_lim_id, AVG(maosh) AS ortacha
+FROM xodimlar
+GROUP BY bo_lim_id
+HAVING AVG(maosh) > 5000000
+ORDER BY ortacha DESC;
+
+-- Bir nechta ustun bo'yicha guruhlash
+SELECT lavozim, bo_lim_id, COUNT(*) AS soni
+FROM xodimlar
+GROUP BY lavozim, bo_lim_id
+ORDER BY soni DESC;</pre>
+<p>
+  <span class="bold">Qoida:</span> <code>SELECT</code> ro'yxatidagi agregatsiz ustunlar
+  <code>GROUP BY</code> da bo'lishi shart.
+</p>
+<hr>
+
+
+<!-- ===================== SAHIFA 8 ===================== -->
+<h2>8-sahifa. Subquery (Ichki so'rovlar)</h2>
+<p>
+  <span class="bold">Subquery</span> &mdash; boshqa SQL so'rov ichida ishlatiladigan to'liq SQL so'rov.
+  U <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code> va <code>HAVING</code> qismlarida ishlatilishi mumkin.
+</p>
+
+<h3>WHERE ichida subquery:</h3>
+<pre>-- O'rtacha maoshdan yuqori maosh oluvchi xodimlar
+SELECT ism, familiya, maosh
+FROM xodimlar
+WHERE maosh > (SELECT AVG(maosh) FROM xodimlar);
+
+-- Eng ko'p xodimga ega bo'lim nomi
+SELECT nomi FROM bo_limlar
+WHERE id = (
+  SELECT bo_lim_id
+  FROM xodimlar
+  GROUP BY bo_lim_id
+  ORDER BY COUNT(*) DESC
+  LIMIT 1
+);</pre>
+
+<h3>IN / NOT IN bilan subquery:</h3>
+<pre>-- Hech qanday loyihaga biriktirilmagan xodimlar
+SELECT ism, familiya
+FROM xodimlar
+WHERE id NOT IN (SELECT xodim_id FROM loyiha_xodim);</pre>
+
+<h3>FROM ichida subquery (derived table):</h3>
+<pre>SELECT bolim, ortacha_maosh
+FROM (
+  SELECT bo_lim_id AS bolim, AVG(maosh) AS ortacha_maosh
+  FROM xodimlar
+  GROUP BY bo_lim_id
+) AS guruh_malumot
+WHERE ortacha_maosh > 6000000;</pre>
+
+<h3>EXISTS bilan subquery:</h3>
+<pre>-- Kamida bitta buyurtmasi bor mijozlar
+SELECT ism, familiya FROM mijozlar m
+WHERE EXISTS (
+  SELECT 1 FROM buyurtmalar b
+  WHERE b.mijoz_id = m.id
+);</pre>
+
+<h3>CTE (Common Table Expression) &mdash; subquery'ni chiroyli yozish:</h3>
+<pre>WITH yuqori_maosh AS (
+  SELECT * FROM xodimlar WHERE maosh > 8000000
+)
+SELECT ism, familiya, maosh FROM yuqori_maosh
+ORDER BY maosh DESC;</pre>
+<hr>
+
+
+<!-- ===================== SAHIFA 9 ===================== -->
+<h2>9-sahifa. EXPLAIN orqali so'rov ishlashini tahlil qilish</h2>
+<p>
+  <span class="bold">EXPLAIN</span> (MySQL) va <span class="bold">EXPLAIN ANALYZE</span> (PostgreSQL)
+  &mdash; SQL so'rovining bajarish rejasini (query plan) ko'rsatadi. Bu so'rov nima sabab sekin
+  ishlashini aniqlash va optimallashtirish uchun zarur.
+</p>
+
+<h3>Ishlatilishi:</h3>
+<pre>-- MySQL
+EXPLAIN SELECT x.ism, b.nomi
+FROM xodimlar x
+JOIN bo_limlar b ON x.bo_lim_id = b.id
+WHERE x.maosh > 5000000;
+
+-- PostgreSQL (haqiqiy bajarish vaqti bilan)
+EXPLAIN ANALYZE
+SELECT x.ism, b.nomi
+FROM xodimlar x
+JOIN bo_limlar b ON x.bo_lim_id = b.id
+WHERE x.maosh > 5000000;</pre>
+
+<h3>EXPLAIN natijasidagi asosiy ustunlar (MySQL):</h3>
+<ul>
+  <li><span class="bold">id</span> &mdash; so'rov bajarilish tartibi</li>
+  <li><span class="bold">select_type</span> &mdash; SIMPLE, PRIMARY, SUBQUERY, DERIVED va h.k.</li>
+  <li><span class="bold">type</span> &mdash; qanday skanerlash: <code>ALL</code> (to'liq skan &mdash; eng yomon),
+    <code>index</code>, <code>range</code>, <code>ref</code>, <code>eq_ref</code>, <code>const</code> (eng yaxshi)</li>
+  <li><span class="bold">possible_keys</span> &mdash; ishlatilishi mumkin bo'lgan indekslar</li>
+  <li><span class="bold">key</span> &mdash; haqiqatda ishlatiladigan indeks</li>
+  <li><span class="bold">rows</span> &mdash; ko'rib chiqilishi taxmin qilingan qatorlar soni</li>
+  <li><span class="bold">Extra</span> &mdash; qo'shimcha ma'lumot: <code>Using index</code>, <code>Using filesort</code>,
+    <code>Using temporary</code></li>
+</ul>
+
+<h3>Indeks yaratib optimallashtirilishi:</h3>
+<pre>-- Maosh ustuniga indeks qo'shgach EXPLAIN natijasi yaxshilanadi
+CREATE INDEX idx_xodim_maosh ON xodimlar(maosh);
+
+-- Kompozit indeks (JOIN uchun)
+CREATE INDEX idx_xodim_bolim ON xodimlar(bo_lim_id, maosh);
+
+-- Endi EXPLAIN qayta tekshiriladi
+EXPLAIN SELECT x.ism, b.nomi
+FROM xodimlar x
+JOIN bo_limlar b ON x.bo_lim_id = b.id
+WHERE x.maosh > 5000000;</pre>
+<p>
+  <span class="bold">Maslahat:</span> <code>type = ALL</code> va <code>rows</code> katta bo'lsa,
+  indeks qo'shish so'rovni ko'p marta tezlashtirishi mumkin. <code>Using filesort</code> va
+  <code>Using temporary</code> ko'rinsangiz &mdash; <code>ORDER BY</code> va <code>GROUP BY</code>
+  ustunlariga indeks qo'shishni ko'rib chiqing.
+</p>
+<hr>
+
+
+<!-- ===================== SAHIFA 10 ===================== -->
+<h2>10-sahifa. Kompleks misol va Xulosa</h2>
+<p>
+  Quyida barcha o'tilgan mavzularni birlashtiruvchi kompleks misol keltirilgan.
+  Unda DDL bilan jadvallar yaratiladi, DML bilan ma'lumot kiritiladi, JOIN, agregatsiya,
+  subquery va EXPLAIN birgalikda ishlatiladi.
+</p>
+
+<pre>-- 1. DDL: Jadvallar
+CREATE TABLE bo_limlar (
+  id    INT         PRIMARY KEY AUTO_INCREMENT,
+  nomi  VARCHAR(80) NOT NULL UNIQUE
+);
+
+CREATE TABLE xodimlar (
+  id        INT           PRIMARY KEY AUTO_INCREMENT,
+  ism       VARCHAR(100)  NOT NULL,
+  familiya  VARCHAR(100)  NOT NULL,
+  maosh     DECIMAL(12,2) NOT NULL CHECK (maosh >= 0),
+  bo_lim_id INT,
+  FOREIGN KEY (bo_lim_id) REFERENCES bo_limlar(id)
+);
+
+-- 2. DML: Ma'lumot kiritish
+INSERT INTO bo_limlar (nomi) VALUES ('IT'), ('Moliya'), ('Marketing');
+INSERT INTO xodimlar (ism, familiya, maosh, bo_lim_id) VALUES
+  ('Ali',   'Valiyev',  7500000, 1),
+  ('Barno', 'Qodirova', 9200000, 1),
+  ('Vohid', 'Azimov',   5100000, 2),
+  ('Dilnoza','Salimova', 8300000, 3),
+  ('Eldor', 'Tursunov', 4700000, 2);
+
+-- 3. JOIN + Agregatsiya: Bo'limlar bo'yicha statistika
+SELECT
+  b.nomi                  AS bolim,
+  COUNT(x.id)             AS xodimlar_soni,
+  ROUND(AVG(x.maosh), 0)  AS ortacha_maosh,
+  MAX(x.maosh)            AS eng_yuqori
+FROM bo_limlar b
+LEFT JOIN xodimlar x ON x.bo_lim_id = b.id
+GROUP BY b.id, b.nomi
+HAVING COUNT(x.id) > 0
+ORDER BY ortacha_maosh DESC;
+
+-- 4. Subquery: O'rtachadan yuqori maoshli xodimlar
+SELECT ism, familiya, maosh,
+  (SELECT nomi FROM bo_limlar WHERE id = x.bo_lim_id) AS bolim
+FROM xodimlar x
+WHERE maosh > (SELECT AVG(maosh) FROM xodimlar)
+ORDER BY maosh DESC;
+
+-- 5. EXPLAIN: So'rov rejasini tekshirish
+EXPLAIN SELECT x.ism, b.nomi, x.maosh
+FROM xodimlar x
+JOIN bo_limlar b ON x.bo_lim_id = b.id
+WHERE x.maosh > 6000000;</pre>
+
+<h3>Xulosa jadval:</h3>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; width:100%; font-size:13pt;">
+  <thead style="background:#ddd;">
+    <tr>
+      <th>Operator</th><th>Turi</th><th>Vazifasi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>CREATE</td><td>DDL</td><td>Jadval/DB yaratish</td></tr>
+    <tr><td>ALTER</td><td>DDL</td><td>Tuzilmani o'zgartirish</td></tr>
+    <tr><td>DROP</td><td>DDL</td><td>Ob'ektni o'chirish</td></tr>
+    <tr><td>INSERT</td><td>DML</td><td>Qator qo'shish</td></tr>
+    <tr><td>UPDATE</td><td>DML</td><td>Qatorni yangilash</td></tr>
+    <tr><td>DELETE</td><td>DML</td><td>Qatorni o'chirish</td></tr>
+    <tr><td>JOIN</td><td>DML/Query</td><td>Jadvallarni birlashtirish</td></tr>
+    <tr><td>GROUP BY + Agregat</td><td>Query</td><td>Guruhlash va hisoblash</td></tr>
+    <tr><td>Subquery / CTE</td><td>Query</td><td>Ichki so'rov</td></tr>
+    <tr><td>EXPLAIN</td><td>Analiz</td><td>So'rov rejasini tekshirish</td></tr>
+  </tbody>
+</table>
+
+<p style="margin-top:20px; text-align:center;">
+  <em>— SQL qo'llanmasi tugadi —</em>
+</p>
+
+</body>
+</html>
